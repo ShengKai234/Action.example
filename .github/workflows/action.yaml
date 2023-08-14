@@ -24,12 +24,3 @@ jobs:
               run: |
                       echo ${GITHUB_REF##*/}
                       echo This is demo file show another ...
-   deploy:
-     name: Deploy
-     needs: build
-     runs-on: ubuntu-latest
-     steps:
-             - uses: actions/checkout@v2
-             - name: Deploy ...
-               run: |
-                       echo run....
