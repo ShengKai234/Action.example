@@ -9,7 +9,7 @@ jobs:
     steps:
             - uses: actions/checkout@v2
             - name: Write a echo ...
-              runs: |
+              run: |
                       echo ${GITHUB_REF##*/}
                       echo This is demo file show
                       echo a very basic and easy-to-understand workflow
@@ -18,6 +18,6 @@ jobs:
     steps:
             - uses: actions/checkout@v2
             - name: Write another echo ...
-              runs: |
+              run: |
                       echo ${GITHUB_REF##*/}
                       echo This is demo file show another ...
