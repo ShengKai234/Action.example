@@ -5,7 +5,7 @@ on:
 
 jobs:
   job-1:
-    runs-on: ubuntu-lastest
+    runs-on: ubuntu-latest
     steps:
             - uses: actions/checkout@v2
             - name: Write a echo ...
@@ -14,7 +14,7 @@ jobs:
                       echo This is demo file show
                       echo a very basic and easy-to-understand workflow
   job-2:
-    runs-on: ubuntu-lastest
+    runs-on: ubuntu-latest
     steps:
             - uses: actions/checkout@v2
             - name: Write another echo ...
