@@ -10,10 +10,17 @@ jobs:
     steps:
             - uses: actions/checkout@v2
             - name: Write a echo ...
+              env: 
+                BRANCH_NAME: ${GITHUB_REF##*/}
               run: |
                       echo ${GITHUB_REF##*/}
                       echo This is demo file show
                       echo a very basic and easy-to-understand workflow
+                      ./gradlew sonar \
+                        -Dsonar.projectKey=ims-account-service-${{ env.BRANCH_NAME }} \
+                        -Dsonar.projectName=ims-account-service-develop-${{ env.BRANCH_NAME }} \
+                        -Dsonar.host.url=http://192.168.0.26:9000 \
+                        -Dsonar.token=sqp_e6896269bdb2c43d951993b1808324ea45442399
   build:
     name: Build
     needs: test
